@@ -1,5 +1,6 @@
 /* eslint-disable max-classes-per-file */
 const container = document.getElementById("container");
+const form = document.getElementById("form");
 class Book {
   constructor(author, title, numPages, read) {
     this.author = author;
@@ -18,6 +19,14 @@ class Library {
     this.books.push(book);
   }
 
+  updateRead(element) {
+    if (element.read) {
+      element.read = false;
+    } else {
+      element.read = true;
+    }
+  }
+
   displayBooks() {
     for (let i = 0; i < this.books.length; i++) {
       let book = document.createElement("div");
@@ -31,19 +40,30 @@ class Library {
       book.appendChild(author);
 
       let pages = document.createElement("h2");
-      pages.textContent = this.books[i].numPages;
+      pages.textContent = "Pages: " + this.books[i].numPages;
       book.appendChild(pages);
 
-      let read = document.createElement("h2");
+      let read = document.createElement("button");
       if (this.books[i].read) {
         read.textContent = "Read";
       } else {
         read.textContent = "Not Read";
       }
+
+      // read.addEventListener("click", this.updateRead());
       book.appendChild(read);
 
       container.appendChild(book);
     }
+  }
+}
+
+function test() {
+  // alert("bing bong");
+  if (form.style.display !== "none") {
+    form.style.display = "none";
+  } else {
+    form.style.display = "block";
   }
 }
 
