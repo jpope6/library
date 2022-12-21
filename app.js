@@ -1,8 +1,26 @@
 /* eslint-disable max-classes-per-file */
 const container = document.getElementById("container");
-const form = document.getElementById("form");
+const modal = document.getElementById("modal");
+const openButton = document.getElementById("add-book");
+const cancel = document.getElementById("cancel");
+
+// open add book modal pop up
+openButton.addEventListener("click", () => {
+  modal.showModal();
+});
+
+// close add book modal pop up
+cancel.addEventListener("click", () => {
+  modal.close();
+});
+
+modal.addEventListener("click", (e) => {
+  if (e.target.nodeName === "DIALOG") {
+    modal.close();
+  }
+});
 class Book {
-  constructor(author, title, numPages, read) {
+  constructor(author = "N/A", title = "N/A", numPages = 0, read) {
     this.author = author;
     this.title = title;
     this.numPages = numPages;
@@ -27,6 +45,7 @@ class Library {
     }
   }
 
+  // display all books onto the screen
   displayBooks() {
     for (let i = 0; i < this.books.length; i++) {
       let book = document.createElement("div");
@@ -50,20 +69,10 @@ class Library {
         read.textContent = "Not Read";
       }
 
-      // read.addEventListener("click", this.updateRead());
       book.appendChild(read);
 
       container.appendChild(book);
     }
-  }
-}
-
-function test() {
-  // alert("bing bong");
-  if (form.style.display !== "none") {
-    form.style.display = "none";
-  } else {
-    form.style.display = "block";
   }
 }
 
