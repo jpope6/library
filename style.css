@@ -36,9 +36,23 @@ body {
 }
 
 #form {
-  background-color: brown;
-  text-align: right;
+  background-color: rgb(169, 180, 182);
   padding: 1rem;
+}
+
+#form-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+
+#cancel {
+  background: rgb(233, 78, 78);
+  max-width: 500px;
+}
+
+#submit {
+  background: rgb(22, 194, 22);
 }
 
 @keyframes fade-in {

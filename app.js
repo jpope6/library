@@ -14,6 +14,7 @@ cancel.addEventListener("click", () => {
   modal.close();
 });
 
+// modal closes if you click outside of it
 modal.addEventListener("click", (e) => {
   if (e.target.nodeName === "DIALOG") {
     modal.close();
