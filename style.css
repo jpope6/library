@@ -38,6 +38,29 @@ body {
 #form {
   background-color: rgb(169, 180, 182);
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#form > h2 {
+  margin: 3%;
+  margin-bottom: 8%;
+}
+
+#form > input {
+  height: 25px;
+  font-size: 14pt;
+}
+
+#read-status {
+  padding-bottom: 8%;
+  font-size: 14pt;
+}
+
+#read-status > input {
+  width: 15px;
+  height: 15px;
 }
 
 #form-buttons {
@@ -48,11 +71,24 @@ body {
 
 #cancel {
   background: rgb(233, 78, 78);
-  max-width: 500px;
+  padding: 6%;
+  border-radius: 10px;
 }
 
 #submit {
   background: rgb(22, 194, 22);
+  padding: 6%;
+  border-radius: 10px;
+}
+
+#cancel:hover,
+#submit:hover {
+  filter: brightness(0.9);
+}
+
+#cancel:active,
+#submit:active {
+  filter: brightness(0.8);
 }
 
 @keyframes fade-in {
@@ -75,6 +111,7 @@ body {
 
 #modal {
   padding: 0;
+  border-radius: 10px;
 }
 
 #modal[open] {
