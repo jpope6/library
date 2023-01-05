@@ -103,12 +103,3 @@ class Library {
 }
 
 const library = new Library();
-
-// const harryPotter = new Book("JK", "Harry Potter", 500, true);
-// const harryPotter1 = new Book("JK", "Harry Potter1", 500, false);
-// const harryPotter2 = new Book("JK", "Harry Potter2", 500, true);
-// library.addBook(harryPotter);
-// library.addBook(harryPotter1);
-// library.addBook(harryPotter2);
-
-// library.displayBooks();

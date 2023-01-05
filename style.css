@@ -10,12 +10,15 @@ body {
   background-color: rgb(160, 160, 160);
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .header {
   background-color: bisque;
   width: 100%;
   padding: 1vh;
+  display: grid;
+  grid-template: 1fr / repeat(10, 2fr);
 }
 
 .header > h1 {
@@ -131,4 +134,24 @@ body {
 
 #modal[open]::backdrop {
   animation: fade-in 500ms forwards;
+}
+
+.add-book {
+  background: bisque;
+  border: 0;
+  height: 3em;
+  width: 8em;
+  grid-area: 1 / 5 / 1 / 5;
+  align-self: center;
+  border-radius: 10px;
+  font-size: large;
+  font-weight: bolder;
+}
+
+.add-book:hover {
+  background: rgb(224, 201, 172);
+}
+
+.add-book:active {
+  background: rgb(179, 160, 137);
 }
