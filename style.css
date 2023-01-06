@@ -44,6 +44,12 @@ body {
   margin: 3%;
 }
 
+#buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
 #form {
   background-color: rgb(169, 180, 182);
   padding: 1rem;

@@ -89,6 +89,9 @@ class Library {
     pages.textContent = "Pages: " + bookToAdd.numPages;
     book.appendChild(pages);
 
+    let buttons = document.createElement("div");
+    buttons.id = "buttons";
+
     let read = document.createElement("button");
     if (bookToAdd.read) {
       read.textContent = "Read";
@@ -96,9 +99,25 @@ class Library {
       read.textContent = "Not Read";
     }
 
-    book.appendChild(read);
+    let del = document.createElement("button");
+    del.textContent = "Delete";
+    del.addEventListener("click", () => this.deleteBook(book));
+
+    buttons.appendChild(read);
+    buttons.appendChild(del);
+
+    book.appendChild(buttons);
 
     container.appendChild(book);
+  }
+
+  // delete book on button press
+  deleteBook(bookToDelete) {
+    const index = this.books.indexOf(bookToDelete);
+    if (index > -1) {
+      this.books.splice(index, 1);
+    }
+    bookToDelete.remove();
   }
 }
 
