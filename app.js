@@ -98,6 +98,7 @@ class Library {
     } else {
       read.textContent = "Not Read";
     }
+    read.addEventListener("click", () => this.changeReadStatus(book, read));
 
     let del = document.createElement("button");
     del.textContent = "Delete";
@@ -109,6 +110,17 @@ class Library {
     book.appendChild(buttons);
 
     container.appendChild(book);
+  }
+
+  // change read status on button press
+  changeReadStatus(bookToChange, div) {
+    if (bookToChange.read) {
+      bookToChange.read = false;
+      div.textContent = "Not Read";
+    } else {
+      bookToChange.read = true;
+      div.textContent = "Read";
+    }
   }
 
   // delete book on button press
