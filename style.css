@@ -10,12 +10,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow-x: hidden;
 }
 
 .header {
   background-color: bisque;
-  width: 100%;
   padding: 1vh;
   display: grid;
   grid-template: 1fr / repeat(10, 2fr);
