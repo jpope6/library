@@ -95,8 +95,10 @@ class Library {
     let read = document.createElement("button");
     if (bookToAdd.read) {
       read.textContent = "Read";
+      read.style.backgroundColor = "rgb(22, 194, 22)";
     } else {
       read.textContent = "Not Read";
+      read.style.backgroundColor = "rgb(248, 53, 53)";
     }
     read.addEventListener("click", () => this.changeReadStatus(book, read));
 
@@ -117,9 +119,11 @@ class Library {
     if (bookToChange.read) {
       bookToChange.read = false;
       div.textContent = "Not Read";
+      div.style.backgroundColor = "rgb(248, 53, 53)";
     } else {
       bookToChange.read = true;
       div.textContent = "Read";
+      div.style.backgroundColor = "rgb(22, 194, 22)";
     }
   }
 
